@@ -1,4 +1,4 @@
-package com.example.cadastro.sisbol.model;
+package com.example.cadastro.sisbol.domain.entity;
 
 
 import jakarta.persistence.Column;

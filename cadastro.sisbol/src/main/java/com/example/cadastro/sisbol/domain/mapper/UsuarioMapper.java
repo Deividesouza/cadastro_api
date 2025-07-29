@@ -1,7 +1,7 @@
 package com.example.cadastro.sisbol.mapper;
 
 import com.example.cadastro.sisbol.dto.UsuarioDTO;
-import com.example.cadastro.sisbol.model.Usuario;
+import com.example.cadastro.sisbol.domain.entity.Usuario;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass // Lombok transforma em classe de utilitários (sem construtor)
