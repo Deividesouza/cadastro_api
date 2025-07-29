@@ -1,8 +1,8 @@
-package com.example.cadastro.sisbol.service;
+package com.example.cadastro.sisbol.domain.service;
 
-import com.example.cadastro.sisbol.dto.UsuarioDTO;
-import com.example.cadastro.sisbol.mapper.UsuarioMapper;
-import com.example.cadastro.sisbol.repository.UsuarioRepository;
+import com.example.cadastro.sisbol.domain.dto.UsuarioDTO;
+import com.example.cadastro.sisbol.domain.mapper.UsuarioMapper;
+import com.example.cadastro.sisbol.domain.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

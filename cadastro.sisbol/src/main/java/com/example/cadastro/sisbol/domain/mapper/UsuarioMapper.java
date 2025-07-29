@@ -1,6 +1,6 @@
-package com.example.cadastro.sisbol.mapper;
+package com.example.cadastro.sisbol.domain.mapper;
 
-import com.example.cadastro.sisbol.dto.UsuarioDTO;
+import com.example.cadastro.sisbol.domain.dto.UsuarioDTO;
 import com.example.cadastro.sisbol.domain.entity.Usuario;
 import lombok.experimental.UtilityClass;
 

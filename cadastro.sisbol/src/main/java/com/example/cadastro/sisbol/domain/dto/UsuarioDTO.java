@@ -1,4 +1,4 @@
-package com.example.cadastro.sisbol.dto;
+package com.example.cadastro.sisbol.domain.dto;
 
 import jakarta.validation.constraints.*;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package com.example.cadastro.sisbol.service;
+package com.example.cadastro.sisbol.domain.service;
 
-import com.example.cadastro.sisbol.dto.UsuarioDTO;
+import com.example.cadastro.sisbol.domain.dto.UsuarioDTO;
 
 import java.util.List;
 

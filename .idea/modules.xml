@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/cadastro.sisbol.iml" filepath="$PROJECT_DIR$/.idea/cadastro.sisbol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cadastro.sisbol/cadastro.sisbol.iml" filepath="$PROJECT_DIR$/cadastro.sisbol/cadastro.sisbol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/cadastro_api.iml" filepath="$PROJECT_DIR$/.idea/cadastro_api.iml" />
     </modules>
   </component>
 </project>

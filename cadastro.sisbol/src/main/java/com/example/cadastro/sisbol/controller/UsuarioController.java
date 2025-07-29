@@ -1,7 +1,7 @@
 package com.example.cadastro.sisbol.controller;
 
-import com.example.cadastro.sisbol.dto.UsuarioDTO;
-import com.example.cadastro.sisbol.service.UsuarioService;
+import com.example.cadastro.sisbol.domain.dto.UsuarioDTO;
+import com.example.cadastro.sisbol.domain.service.UsuarioService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

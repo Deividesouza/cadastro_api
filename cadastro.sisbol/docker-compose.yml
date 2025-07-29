@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_auth
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: *s5rv1d0r5$
+      POSTGRES_DB: authdb
+    ports:
+      - "5432:5432"
+    volumes:
+        - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend_net
+
+  
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_sisbol
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: *s5rv1d0r5$
+      MYSQL_DATABASE: blocksisbol
+    ports:
+        - "3306:3306"
+    volumes:
+        - mysql_data:/var/lib/mysql
+    networks:
+      - backend_net
+  
+volumes:
+  postgres_data:
+  mysql_data:
+
+networks:
+  backend_net:
+    driver: bridge
+    
+
