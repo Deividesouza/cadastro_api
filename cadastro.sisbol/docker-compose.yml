@@ -6,26 +6,26 @@ services:
     container_name: postgres_auth
     restart: always
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: *s5rv1d0r5$
-      POSTGRES_DB: authdb
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - "5432:5432"
+      - "5431:5432"
     volumes:
         - postgres_data:/var/lib/postgresql/data
     networks:
       - backend_net
 
-  
+
   mysql:
     image: mysql:8.0
     container_name: mysql_sisbol
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: *s5rv1d0r5$
-      MYSQL_DATABASE: blocksisbol
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
-        - "3306:3306"
+        - "3305:3306"
     volumes:
         - mysql_data:/var/lib/mysql
     networks:
