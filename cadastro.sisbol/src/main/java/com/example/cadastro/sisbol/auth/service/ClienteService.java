@@ -5,7 +5,7 @@ import com.example.cadastro.sisbol.auth.dto.ClienteDTO;
 
 import java.util.List;
 
-public interface ClienteSerivce {
+public interface ClienteService {
     ClienteDTO criar (CadastroClienteDTO dto);
     List<ClienteDTO> listarTodos();
     ClienteDTO buscarPorUsername(String username);

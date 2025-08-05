@@ -1,4 +1,4 @@
-package com.example.cadastro.sisbol.auth;
+package com.example.cadastro.sisbol.auth.service;
 
 
 import com.example.cadastro.sisbol.auth.repository.ClienteRepository;
