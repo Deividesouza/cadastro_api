@@ -1,15 +1,15 @@
 app:
   datasource:
     url: jdbc:mysql://localhost:3305/blocksisbol
-    username: 
-    password: 
+    username: root
+    password: "*s5rv1d0r5$"
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 auth:
   datasource:
     url: jdbc:postgresql://localhost:5431/authdb
-    username: 
-    password: 
+    username: root
+    password: "*s5rv1d0r5$"
     driver-class-name: org.postgresql.Driver
 
 spring:

@@ -3,6 +3,8 @@ package com.example.cadastro.sisbol.controller;
 import com.example.cadastro.sisbol.auth.dto.*;
 import com.example.cadastro.sisbol.config.JwtUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,16 +20,22 @@ public class AuthController {
     private final com.example.cadastro.sisbol.auth.service.AuthUserDetailsService userDetailsService;
 
     @PostMapping("/login")
-    public AuthenticationResponse login(@RequestBody AuthenticationRequest request) {
-        Authentication auth = new UsernamePasswordAuthenticationToken(
-                request.getUsername(), request.getPassword());
+    public ResponseEntity<?> login(@RequestBody AuthenticationRequest request) {
+        try {
+            UsernamePasswordAuthenticationToken authToken =
+                    new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword());
 
-        authenticationManager.authenticate(auth);
+            Authentication authentication = authenticationManager.authenticate(authToken);
 
-        UserDetails userDetails = userDetailsService.loadUserByUsername(request.getUsername());
-        String jwt = jwtUtil.generateToken(userDetails);
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            String jwt = jwtUtil.generateToken(userDetails);
 
-        return new AuthenticationResponse(jwt);
+            return ResponseEntity.ok(new AuthenticationResponse(jwt));
+        } catch (BadCredentialsException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário ou senha inválidos");
+        }
     }
+
+
 }
 
