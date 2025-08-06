@@ -1,15 +1,15 @@
 app:
   datasource:
     url: jdbc:mysql://localhost:3305/blocksisbol
-    username: root
-    password: "*s5rv1d0r5$"
+    username:
+    password:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 auth:
   datasource:
     url: jdbc:postgresql://localhost:5431/authdb
-    username: root
-    password: "*s5rv1d0r5$"
+    username:
+    password:
     driver-class-name: org.postgresql.Driver
 
 spring:
@@ -17,3 +17,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+
+jwt:
+  secret: "sua-chave-super-secreta-e-base64"

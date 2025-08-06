@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/usuarios")
-@RequiredArgsConstructor // injeta automaticamente o service
+@RequiredArgsConstructor
 public class UsuarioController {
 
     private final UsuarioService service;
