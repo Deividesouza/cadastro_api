@@ -11,6 +11,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="cadastro_api" />
+        <module name="cadastro.sisbol" />
       </profile>
     </annotationProcessing>
   </component>
