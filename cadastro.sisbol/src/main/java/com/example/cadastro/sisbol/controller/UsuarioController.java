@@ -34,4 +34,12 @@ public class UsuarioController {
     public void deletar(@PathVariable String ip) {
         service.deletarPorIp(ip);
     }
+
+    @PutMapping("/{ipAntigo}")
+    public UsuarioDTO atualizar(
+            @PathVariable String ipAntigo,
+            @RequestBody @Valid UsuarioDTO dto) {
+        return service.atualizar(ipAntigo, dto);
+    }
+
 }

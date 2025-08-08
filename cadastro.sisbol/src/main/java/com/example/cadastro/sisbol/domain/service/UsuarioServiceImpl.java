@@ -39,4 +39,22 @@ public class UsuarioServiceImpl implements UsuarioService {
     public void deletarPorIp(String ip) {
         repository.deleteById(ip);
     }
+
+    @Override
+    public UsuarioDTO atualizar(String ipAntigo, UsuarioDTO dto) {
+        var usuarioExistente = repository.findById(ipAntigo)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado para o IP: " + ipAntigo));
+
+        // Cria a entidade com dados atualizados (inclusive novo IP)
+        var usuarioNovo = UsuarioMapper.toEntity(dto);
+
+        // Salva o novo usuário com o IP atualizado
+        var usuarioSalvo = repository.save(usuarioNovo);
+
+        // Remove o usuário antigo
+        repository.delete(usuarioExistente);
+
+        return UsuarioMapper.toDTO(usuarioSalvo);
+    }
+
 }

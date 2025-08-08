@@ -39,4 +39,5 @@ public class ClienteController {
     public void deletar(@PathVariable String username) {
         clienteService.deletar(username);
     }
+
 }

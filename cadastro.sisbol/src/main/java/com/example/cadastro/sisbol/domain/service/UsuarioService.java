@@ -9,5 +9,7 @@ public interface UsuarioService {
     List<UsuarioDTO> listarTodos();
     UsuarioDTO buscarPorIp(String ip);
     void deletarPorIp(String ip);
+    UsuarioDTO atualizar(String ipAntigo, UsuarioDTO dto);
+
 }
 
