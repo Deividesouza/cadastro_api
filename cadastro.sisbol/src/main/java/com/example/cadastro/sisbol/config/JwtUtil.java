@@ -1,10 +1,7 @@
 package com.example.cadastro.sisbol.config;
 
-
-
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -17,8 +14,8 @@ public class JwtUtil {
     private final long EXPIRATION = 1000 * 60 * 60 * 10; // 10 horas
     private final Key secretKey;
 
-    public JwtUtil(@Value("${jwt.secret}") String secret) {
-        this.secretKey = Keys.hmacShaKeyFor(secret.getBytes());
+    public JwtUtil(JwtProperties properties) {
+        this.secretKey = Keys.hmacShaKeyFor(properties.getSecret().getBytes());
     }
 
     public String generateToken(UserDetails userDetails) {
@@ -47,4 +44,3 @@ public class JwtUtil {
         return Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody();
     }
 }
-

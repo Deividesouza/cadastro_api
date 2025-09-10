@@ -30,6 +30,18 @@ services:
         - mysql_data:/var/lib/mysql
     networks:
       - backend_net
+
+  angular:
+    build:
+      context: ./login_page_angular/login-page
+    container_name: angular_nginx
+    ports:
+      - "4200:80"
+    depends_on:
+      - postgres
+      - mysql
+    networks:
+      - backend_net
   
 volumes:
   postgres_data:
